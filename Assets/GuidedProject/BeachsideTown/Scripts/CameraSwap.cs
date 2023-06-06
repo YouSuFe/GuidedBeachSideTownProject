@@ -13,24 +13,55 @@ public class CameraSwap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("1"))
+        if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             ActivateMainCamera();
         }
-        else if(Input.GetKeyDown("2"))
+        else if(Input.GetKeyDown(KeyCode.Alpha2))
         {
             ActivateWideCamera();
         }
-        else if(Input.GetKeyDown("3"))
+        else if(Input.GetKeyDown(KeyCode.Alpha3))
         {
             ActivateCloseUpCamera();
         }
-        else if(Input.GetKeyDown("4"))
+        else if(Input.GetKeyDown(KeyCode.Alpha4))
         {
             ActivateMidRangeCamera();
         }
     }
 
+    // Activate camera that send into it
+    private void ActivateCamera(Camera cam)
+    {
+        mainCamera.enabled = false;
+        wideCamera.enabled = false;
+        midRangeCamera.enabled = false;
+        closeUpCamera.enabled = false;
+
+        cam.enabled = true;
+    }
+
+    public void ActivateMainCamera()
+    {
+        ActivateCamera(mainCamera);
+    }
+
+    public void ActivateWideCamera()
+    {
+        ActivateCamera(wideCamera);
+    }
+
+    public void ActivateMidRangeCamera()
+    {
+        ActivateCamera(midRangeCamera);
+    }
+
+    public void ActivateCloseUpCamera()
+    {
+        ActivateCamera(closeUpCamera);
+    }
+    /*
     private void ActivateMainCamera()
     {
         mainCamera.enabled = true;
@@ -82,4 +113,5 @@ public class CameraSwap : MonoBehaviour
     {
         ActivateMidRangeCamera();
     }
+    */
 }
