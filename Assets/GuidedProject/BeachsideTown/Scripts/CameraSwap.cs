@@ -9,12 +9,7 @@ public class CameraSwap : MonoBehaviour
     public Camera wideCamera;
     public Camera closeUpCamera;
     public Camera midRangeCamera;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -44,12 +39,22 @@ public class CameraSwap : MonoBehaviour
         midRangeCamera.enabled = false;
     }
 
+    public void GetActiveMainCamera()
+    {
+        ActivateMainCamera();
+    }
+
     private void ActivateWideCamera()
     {
         mainCamera.enabled = false;
         wideCamera.enabled = true;
         closeUpCamera.enabled = false;
         midRangeCamera.enabled = false;
+    }
+
+    public void GetActiveWideCamera()
+    {
+        ActivateWideCamera();
     }
 
     private void ActivateCloseUpCamera()
@@ -60,11 +65,21 @@ public class CameraSwap : MonoBehaviour
         midRangeCamera.enabled = false;
     }
 
+    public void GetActiveCloseUpCamera()
+    {
+        ActivateCloseUpCamera();
+    }
+
     private void ActivateMidRangeCamera()
     {
         mainCamera.enabled = false;
         wideCamera.enabled = false;
         closeUpCamera.enabled = false;
         midRangeCamera.enabled = true;
+    }
+
+    public void GetActiveMidRangeCamera()
+    {
+        ActivateMidRangeCamera();
     }
 }
